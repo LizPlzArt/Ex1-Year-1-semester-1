@@ -1,4 +1,7 @@
+import java.util.Hashtable;
 import java.util.Scanner;
+import java.util.Dictionary;
+
 public class NumberNightmare {
     //a function that gets input from the user
     public static String getUserInput()
@@ -20,14 +23,15 @@ public class NumberNightmare {
         return userInput.split("b+");
     }
 
-    //a function that converts the number given by the user to decimal representation
-    public static int convert2Decimal(int number, int base)
-    {
-
-        return Integer.parseInt(num);
-    }
-
     public static void main(String[] args) {
+
+        Dictionary<String, Integer> dict= new Hashtable<>();
+        dict.put("A", 10);
+        dict.put("B", 11);
+        dict.put("C", 12);
+        dict.put("D", 13);
+        dict.put("E", 14);
+        dict.put("G", 15);
 
         String userInput = getUserInput();
         if(!userInputValidator(userInput))
@@ -36,8 +40,15 @@ public class NumberNightmare {
         }
 
         String[] numbers = stringSplit(userInput);
-        int number = Integer.parseInt(numbers[0]);
+        String number = numbers[0];
         int base = Integer.parseInt(numbers[1]);
+        for(int i=0; i<number.length(); i++)
+        {
+            String a = number.substring(i,i);
+            int temp = dict.get(a);
+            System.out.println(temp);
+
+        }
 
 
 
