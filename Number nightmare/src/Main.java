@@ -39,15 +39,18 @@ public class Main {
             System.out.println("You entered an invalid number.");
         }
 
-        String[] numbers = stringSplit(userInput);
-        String number = numbers[0];
-        int base = Integer.parseInt(numbers[1]);
+        String[] numbersArr = stringSplit(userInput);
+
+        StringBuilder numberStr = new StringBuilder(numbersArr[0]);
+        StringBuilder reverseStr = numberStr.reverse();
+
+        int base = Integer.parseInt(numbersArr[1]);
         double decimalInt =0;
 
-        for(int i=0; i<number.length(); i++)
+        for(int i=0; i<numberStr.length(); i++)
         {
             int currentInt;
-            String currentChar = number.substring(i,i+1);
+            String currentChar = numberStr.substring(i,i+1);
             if (!currentChar.matches("[0-9]"))
             {
                currentInt = dict.get(currentChar);
