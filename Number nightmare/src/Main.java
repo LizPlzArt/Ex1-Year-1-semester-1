@@ -2,7 +2,7 @@ import java.util.Hashtable;
 import java.util.Scanner;
 import java.util.Dictionary;
 
-public class NumberNightmare {
+public class Main {
     //a function that gets input from the user
     public static String getUserInput()
     {
@@ -42,6 +42,7 @@ public class NumberNightmare {
         String[] numbers = stringSplit(userInput);
         String number = numbers[0];
         int base = Integer.parseInt(numbers[1]);
+        double decimalInt =0;
 
         for(int i=0; i<number.length(); i++)
         {
@@ -55,12 +56,9 @@ public class NumberNightmare {
             {
                 currentInt = Integer.parseInt(currentChar);
             }
-
-
-
+            double exponent = Math.pow(base, i);
+            decimalInt = decimalInt + currentInt*exponent;
         }
-
-
-
+      System.out.println(decimalInt);
     }
 }
