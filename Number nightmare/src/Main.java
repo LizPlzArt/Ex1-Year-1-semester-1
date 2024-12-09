@@ -41,6 +41,7 @@ public class Main {
         base = Integer.parseInt(numbersArr[1]);
         int naturalNum = Integer.parseInt(numbersArr[0]);
 
+        //convert the given natural num to the given base
         String decimal2Base = Ex1.decimal2Base(naturalNum, base);
         reverseStr = Ex1.reverseString(decimal2Base);
         System.out.println(reverseStr + " in base " + base);
