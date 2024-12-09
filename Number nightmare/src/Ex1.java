@@ -6,17 +6,30 @@ import java.util.Dictionary;
 public class Ex1 {
 
     //dictionary for letters to numbers
-    public static Dictionary<String, Integer> dict= new Hashtable<>();
+    public static Dictionary<String, Integer> letters= new Hashtable<>();
 
-    //this function initializes the dictionary, the typo in the functions name is intended
-    public static void Initializa()
+    //dictionary for numbers to letters
+    public static Dictionary<Integer, String> numbers= new Hashtable<>();
+
+
+    //these functions initialize the dictionaries, the typo in the functions name is intended
+    public static void Initializa1()
     {
-    dict.put("A", 10);
-    dict.put("B", 11);
-    dict.put("C", 12);
-    dict.put("D", 13);
-    dict.put("E", 14);
-    dict.put("F", 15);
+    letters.put("A", 10);
+    letters.put("B", 11);
+    letters.put("C", 12);
+    letters.put("D", 13);
+    letters.put("E", 14);
+    letters.put("F", 15);
+    }
+    public static void Initializa2()
+    {
+        numbers.put(10,"A");
+        numbers.put(11,"B");
+        numbers.put(12,"C");
+        numbers.put(13,"D");
+        numbers.put(14,"E");
+        numbers.put(15,"F");
     }
 
     //this function gets input from the user
@@ -40,9 +53,9 @@ public class Ex1 {
     }
 
     //reverse string
-    public static String reverseString( String[] numbersArr)
+    public static String reverseString( String numberString)
     {
-        StringBuilder numberStr = new StringBuilder(numbersArr[0]);
+        StringBuilder numberStr = new StringBuilder(numberString);
         StringBuilder reverseStr = numberStr.reverse();
         String reverseString = reverseStr.toString();
         return reverseString;
@@ -60,7 +73,7 @@ public class Ex1 {
             }
             else
             {
-                currentInt = Ex1.dict.get(currentChar);
+                currentInt = Ex1.letters.get(currentChar);
             }
             if (currentInt > base)
             {
@@ -72,6 +85,32 @@ public class Ex1 {
             decimalInt = decimalInt + currentInt*expo;
         }
         return decimalInt;
+    }
+
+    public static String decimal2Base(int naturalNum, int base)
+    {
+        String decimalStr = "";
+        while (naturalNum>0)
+        {
+            int remainder = naturalNum%base;
+            if(remainder>9)
+            {
+                String letter = numbers.get(remainder);
+                decimalStr= decimalStr + letter;
+            }
+            else
+            {
+                decimalStr= decimalStr + remainder;
+            }
+            naturalNum= naturalNum/base;
+        }
+        return decimalStr;
+    }
+
+    public static boolean equals(String n1, String n2)
+    {
+        boolean ans = n1.equals(n2);
+        return ans;
     }
 
 }
