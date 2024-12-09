@@ -75,7 +75,7 @@ public class Ex1 {
             {
                 currentInt = Ex1.letters.get(currentChar);
             }
-            if (currentInt > base)
+            if (currentInt >= base)
             {
                 System.out.println("You entered an invalid number.");
                 break;

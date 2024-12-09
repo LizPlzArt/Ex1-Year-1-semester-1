@@ -10,25 +10,9 @@ public class Main {
         System.out.println("Any number and it's corresponding base from binary to hexadecimal");
         String userInput = Ex1.getUserInput();
 
-        //prints a message if the users input is invalid
-        if(!Ex1.userInputValidator(userInput))
-        {
-            System.out.println("You entered an invalid number.");
-        }
+        int decimalInt = Ex1Template.number2Int(userInput);
+        System.out.println(decimalInt + " in decimal ");
 
-        //split the users input
-        String[] numbersArr = Ex1.stringSplit(userInput);
-
-        //reverse only the number
-        String numString = numbersArr[0];
-        String reverseStr = Ex1.reverseString(numString);
-
-        //base - string to int
-        int base = Integer.parseInt(numbersArr[1]);
-
-        //convert to decimal representation
-        double decimalInt = Ex1.num2Decimal(reverseStr, base);
-        System.out.println(numString + " in base " + base + " = " + decimalInt + " in decimal ");
 
         //get new input from user
         System.out.println("Natural number and goal base from binary to hexadecimal");
