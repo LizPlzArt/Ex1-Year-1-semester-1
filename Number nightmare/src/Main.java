@@ -10,7 +10,9 @@ public class Main {
         System.out.println("Any number and it's corresponding base from binary to hexadecimal");
         String userInput = Ex1.getUserInput();
 
-        int decimalInt = Ex1Template.number2Int(userInput);
+        int decimalInt = Ex1.number2Int(userInput);
+        String[] numArr = Ex1.stringSplit(userInput);
+        String numString = numArr[0];
         System.out.println(decimalInt + " in decimal ");
 
 
@@ -19,15 +21,15 @@ public class Main {
         userInput = Ex1.getUserInput();
 
         //split the users input
-        numbersArr = Ex1.stringSplit(userInput);
+        String[] numbersArr = Ex1.stringSplit(userInput);
 
         //base - string to int
-        base = Integer.parseInt(numbersArr[1]);
+        int base = Integer.parseInt(numbersArr[1]);
         int naturalNum = Integer.parseInt(numbersArr[0]);
 
         //convert the given natural num to the given base
-        String decimal2Base = Ex1.decimal2Base(naturalNum, base);
-        reverseStr = Ex1.reverseString(decimal2Base);
+        String decimal2Base = Ex1.int2Number(naturalNum, base);
+        String reverseStr = Ex1.reverseString(decimal2Base);
         System.out.println(reverseStr + " in base " + base);
 
         //check if the first answer equals to the second answer
