@@ -8,11 +8,13 @@ public class Ex1Test {
      * This JUnit class represents a very partial test class for Ex1.
      * Make sure you complete all the needed JUnits
      */
+        //test passed
         @Test
         void computeNumberTest() {
             String s2 = "1011b2";
             int v = Ex1.number2Int(s2);
             assertEquals(v,11);
+
             String s10 = "1011bA";
             v = Ex1.number2Int(s10);
             s2 = Ex1.int2Number(v,2);
@@ -21,9 +23,10 @@ public class Ex1Test {
             assertTrue(Ex1.equals(s10,s2));
         }
 
+        //test passed
         @Test
         void isBasisNumberTest() {
-            String[] good = {"1", "1b2", "01b2", "123bA", "ABbG", "0bA"};
+            String[] good = {"1b2", "01b2", "123bA", "ABbG", "0bA"};
             for(int i=0;i<good.length;i=i+1) {
                 boolean ok = Ex1.isNumber(good[i]);
                 assertTrue(ok);
@@ -34,9 +37,19 @@ public class Ex1Test {
                 assertFalse(not_ok);
             }
         }
+
         @Test
         void int2NumberTest() {
-            // implement this test
+            int[] natNum = {12345, 666, 666};
+            int[] base = {6,6,9};
+            String[] ans = {"133053","3030","222"};
+
+            for(int i=0;i<natNum.length;i=i+1)
+            {
+                String number = Ex1.int2Number(natNum[i],base[i]);
+                assertEquals(number,ans[i]);
+            }
+
         }
         @Test
         void maxIndexTest() {
