@@ -42,7 +42,7 @@ public class Ex1Test {
         void int2NumberTest() {
             int[] natNum = {12345, 666, 666};
             int[] base = {6,6,9};
-            String[] ans = {"133053","3030","222"};
+            String[] ans = {"133053b6","3030b6","820b9"};
 
             for(int i=0;i<natNum.length;i=i+1)
             {
@@ -51,9 +51,12 @@ public class Ex1Test {
             }
 
         }
+
+        //test passed
         @Test
         void maxIndexTest() {
-            // implement this test
+            String[] arrStr = {"100111b2","12345b6","012b5","123bG","EFbG"};
+            assertEquals(Ex1.maxIndex(arrStr),1);
         }
 
         // Add additional test functions - test as much as you can.

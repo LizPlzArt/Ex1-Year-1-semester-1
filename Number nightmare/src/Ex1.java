@@ -219,11 +219,12 @@ public class Ex1 {
         }
         int max = arrNum[0];
         int maxIndex = 0;
-        for (int i = 1; i < arrNum.length; i++)
+        for (int i = 0; i < arrNum.length; i++)
         {
             if (arrNum[i] > max)
             {
-                max = i;
+                max= arrNum[i];
+                maxIndex = i;
             }
         }
         return maxIndex;
